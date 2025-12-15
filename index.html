@@ -1,0 +1,2772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Items</title>
+    <link rel="icon" href="favicon.jpg">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="toggle-all-filters.js"></script>
+    <script type="text/javascript" src="toggle-filters.js"></script>
+    <script type="text/javascript" src="clear-filters.js"></script>
+    <script type="text/javascript" src="select-objective.js"></script>
+    <script type="text/javascript" src="filter-table.js"></script>
+    <script type="text/javascript" src="search-table.js"></script>
+    <script type="text/javascript" src="sort-table.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>HITMAN Freelancer Items</h1>
+        <div class="options-row">
+            <button class="filter-toggle" onclick="toggleFilters()">Show/Hide Filters</button>
+            <button class="filter-toggle" onclick="clearFilters()">Clear All Filters</button>
+            <select class="objectives" onchange="selectObjective(this.value)">
+                <option>Select an objective to filter items. Objectives with (*) can also use items from the location,
+                    e.g. Kitchen Knife, Propane Flask.</option>
+                <optgroup label="Prestige Objective">
+                    <option value="are">Assualt Rifle Kill - Epic</option>
+                    <option value="cke">Collateral Kill - Explosive (*)</option>
+                    <option value="ckf">Collateral Kill - Firearms</option>
+                    <option value="hkl">Headshot Kill - Legendary</option>
+                    <option value="ik">Icepick Kill</option>
+                    <option value="kak">Katana Kill</option>
+                    <option value="mke">Melee Kill - Epic</option>
+                    <option value="ose">Open Safe - Explosive (*)</option>
+                    <option value="suk">Shuriken Kill</option>
+                    <option value="upk">Unsilenced Pistol Kill - Epic</option>
+                </optgroup>
+                <optgroup label="Payout Objectives">
+                    <option value="ar">Assault Rifle Kill</option>
+                    <option value="axe">Axe Kill</option>
+                    <option value="bg">Blind Guard</option>
+                    <option value="bt">Blind Target</option>
+                    <option value="dt">Deadly Throw (*)</option>
+                    <option value="ek">Electrocution Kill (*)</option>
+                    <option value="egar">Eliminate Guards - Assault Rifle</option>
+                    <option value="egsh">Eliminate Guards - Shotgun</option>
+                    <option value="egsn">Eliminate Guards - Sniper</option>
+                    <option value="exk">Explosive Kill (*)</option>
+                    <option value="exfg">Explosive Kill - Fragmentation Grenade</option>
+                    <option value="exp">Explosive Kill - Proximity</option>
+                    <option value="exr">Explosive Kill - Remote</option>
+                    <option value="fw">Fiberwire Kill</option>
+                    <option value="kk">Knife Kill (*)</option>
+                    <option value="pgc">Pacify Guards - Concussive Explosives</option>
+                    <option value="pgs">Poison Guard - Syringe</option>
+                    <option value="pk">Poison Kill</option>
+                    <option value="ptdg">Poison Target - Dart Gun</option>
+                    <option value="pte">Poison Target - Emetic (*)</option>
+                    <option value="pts">Poison Target - Sedative</option>
+                    <option value="sk">Shotgun Kill</option>
+                    <option value="sifk">Silenced Firearm Kill</option>
+                    <option value="sipk">Silenced Pistol Kill</option>
+                    <option value="sisk">Silenced Sniper Kill</option>
+                    <option value="stt">Silenced Target Takedown - Rare Melee</option>
+                    <option value="snk">Sniper Rifle Kill</option>
+                    <option value="smgk">Sub Machine Gun Kill</option>
+                    <option value="tk">Trap Kill - Oil/Water Canister</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="filters" id="filtersDiv">
+            <div><input type="text" id="myInput" onkeyup="searchItems()" placeholder="Search for item"
+                    title="Type in a name"></div>
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="section-title" data-value="SectionTitle"
+                        onclick="toggleAllFilters('section')">Section</button>
+                    <button class="filter-button" data-filter="section" data-value="Assault Rifles"
+                        onclick="toggleFilter(this)">Assault Rifles</button>
+                    <button class="filter-button" data-filter="section" data-value="Freelancer Tools (Explosives)"
+                        onclick="toggleFilter(this)">Freelancer Tools (Explosives)</button>
+                    <button class="filter-button" data-filter="section" data-value="Freelancer Tools (Poisons)"
+                        onclick="toggleFilter(this)">Freelancer Tools (Poisons)</button>
+                    <button class="filter-button" data-filter="section" data-value="Freelancer Tools (Tools)"
+                        onclick="toggleFilter(this)">Freelancer Tools (Tools)</button>
+                    <button class="filter-button" data-filter="section" data-value="Melee Weapons"
+                        onclick="toggleFilter(this)">Melee Weapons</button>
+                    <button class="filter-button" data-filter="section" data-value="Pistols"
+                        onclick="toggleFilter(this)">Pistols</button>
+                    <button class="filter-button" data-filter="section" data-value="Shotguns"
+                        onclick="toggleFilter(this)">Shotguns</button>
+                    <button class="filter-button" data-filter="section" data-value="SMGs"
+                        onclick="toggleFilter(this)">SMGs</button>
+                    <button class="filter-button" data-filter="section" data-value="Sniper Rifles"
+                        onclick="toggleFilter(this)">Sniper Rifles</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Ancestral)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Ancestral)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Banker)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Banker)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Disruptor)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Disruptor)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Drop)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Drop)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Infiltrator)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Infiltrator)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Makeshift)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Makeshift)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Ornamental)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Ornamental)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Reflection)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Reflection)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Splitter)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Splitter)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Street Art)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Street Art)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Trinity)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Trinity)</button>
+                    <button class="filter-button" data-filter="section" data-value="Thematic Weapons (Undying)"
+                        onclick="toggleFilter(this)">Thematic Weapons (Undying)</button>
+
+                </div>
+            </div>
+            <div>
+                <div class="filter-group">
+                    <div class="checkbox-group">
+                        <button class="filter-title" data-filter="type-title" data-value="TypeTitle"
+                            onclick="toggleAllFilters('type')">Type</button>
+                        <button class="filter-button" data-filter="type" data-value="Assault Rifle"
+                            onclick="toggleFilter(this)">Assault Rifle</button>
+                        <button class="filter-button" data-filter="type" data-value="Dart Gun"
+                            onclick="toggleFilter(this)">Dart Gun</button>
+                        <button class="filter-button" data-filter="type" data-value="Grenade"
+                            onclick="toggleFilter(this)">Grenade</button>
+                        <button class="filter-button" data-filter="type" data-value="Impact"
+                            onclick="toggleFilter(this)">Impact</button>
+                        <button class="filter-button" data-filter="type" data-value="Melee"
+                            onclick="toggleFilter(this)">Melee</button>
+                        <button class="filter-button" data-filter="type" data-value="Pistol"
+                            onclick="toggleFilter(this)">Pistol</button>
+                        <button class="filter-button" data-filter="type" data-value="Poison"
+                            onclick="toggleFilter(this)">Poison</button>
+                        <button class="filter-button" data-filter="type" data-value="Proximity"
+                            onclick="toggleFilter(this)">Proximity</button>
+                        <button class="filter-button" data-filter="type" data-value="Remote"
+                            onclick="toggleFilter(this)">Remote</button>
+                        <button class="filter-button" data-filter="type" data-value="Shotgun"
+                            onclick="toggleFilter(this)">Shotgun</button>
+                        <button class="filter-button" data-filter="type" data-value="SMG"
+                            onclick="toggleFilter(this)">SMG</button>
+                        <button class="filter-button" data-filter="type" data-value="Sniper Rifle"
+                            onclick="toggleFilter(this)">Sniper Rifle</button>
+                        <button class="filter-button" data-filter="type" data-value="Tool"
+                            onclick="toggleFilter(this)">Tool</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="subtype-title" data-value="SubTypeTitle"
+                        onclick="toggleAllFilters('subtype')">Sub-Type</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Axe"
+                        onclick="toggleFilter(this)">Axe</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Baseball Bat"
+                        onclick="toggleFilter(this)">Baseball Bat</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Concussion"
+                        onclick="toggleFilter(this)">Concussion</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Crowbar"
+                        onclick="toggleFilter(this)">Crowbar</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Distraction"
+                        onclick="toggleFilter(this)">Distraction</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Emetic"
+                        onclick="toggleFilter(this)">Emetic</button>
+                    <button class="filter-button" data-filter="subtype" data-value="EMP"
+                        onclick="toggleFilter(this)">EMP</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Explosive"
+                        onclick="toggleFilter(this)">Explosive</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Fiber Wire"
+                        onclick="toggleFilter(this)">Fiber Wire</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Flash"
+                        onclick="toggleFilter(this)">Flash</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Fragmentation"
+                        onclick="toggleFilter(this)">Fragmentation</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Ice Pick"
+                        onclick="toggleFilter(this)">Ice Pick</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Katana"
+                        onclick="toggleFilter(this)">Katana</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Key Hacker"
+                        onclick="toggleFilter(this)">Key Hacker</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Knife"
+                        onclick="toggleFilter(this)">Knife</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Lethal"
+                        onclick="toggleFilter(this)">Lethal</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Lockpick"
+                        onclick="toggleFilter(this)">Lockpick</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Non-Lethal"
+                        onclick="toggleFilter(this)">Non-Lethal</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Sedative"
+                        onclick="toggleFilter(this)">Sedative</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Shuriken"
+                        onclick="toggleFilter(this)">Shuriken</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Syringe"
+                        onclick="toggleFilter(this)">Syringe</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Taser"
+                        onclick="toggleFilter(this)">Taser</button>
+                    <button class="filter-button" data-filter="subtype" data-value="Trap"
+                        onclick="toggleFilter(this)">Trap</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="silenced-title" data-value="SilencedTitle"
+                        onclick="toggleAllFilters('silenced')">Silenced</button>
+                    <button class="filter-button" data-filter="silenced" data-value="Silenced"
+                        onclick="toggleFilter(this)">Silenced</button>
+                    <button class="filter-button" data-filter="silenced" data-value="Unsilenced"
+                        onclick="toggleFilter(this)">Unsilenced</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="piercing-title" data-value="PiercingTitle"
+                        onclick="toggleAllFilters('piercing')">Piercing</button>
+                    <button class="filter-button" data-filter="piercing" data-value="Piercing"
+                        onclick="toggleFilter(this)">Piercing</button>
+                    <button class="filter-button" data-filter="piercing" data-value="Non-Piercing"
+                        onclick="toggleFilter(this)">Non-Piercing</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="conceal-title" data-value="ConsealableTitle"
+                        onclick="toggleAllFilters('conceal')">Consealable</button>
+                    <button class="filter-button" data-filter="conceal" data-value="Yes"
+                        onclick="toggleFilter(this)">Yes</button>
+                    <button class="filter-button" data-filter="conceal" data-value="No"
+                        onclick="toggleFilter(this)">No</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="prestige-title" data-value="PrestigeTitle"
+                        onclick="toggleAllFilters('prestige')">Prestige</button>
+                    <button class="filter-button" data-filter="prestige" data-value="Yes"
+                        onclick="toggleFilter(this)">Yes</button>
+                    <button class="filter-button" data-filter="prestige" data-value="No"
+                        onclick="toggleFilter(this)">No</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="rarity-title" data-value="RarityTitle"
+                        onclick="toggleAllFilters('rarity')">Rarity</button>
+                    <button class="filter-button" data-filter="rarity" data-value="Common"
+                        onclick="toggleFilter(this)">Common</button>
+                    <button class="filter-button" data-filter="rarity" data-value="Rare"
+                        onclick="toggleFilter(this)">Rare</button>
+                    <button class="filter-button" data-filter="rarity" data-value="Epic"
+                        onclick="toggleFilter(this)">Epic</button>
+                    <button class="filter-button" data-filter="rarity" data-value="Legendary"
+                        onclick="toggleFilter(this)">Legendary</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="checkbox-group">
+                    <button class="filter-title" data-filter="capacity-title" data-value="CapacityTitle"
+                        onclick="toggleAllFilters('capacity')">Capacity</button>
+                    <button class="filter-button" data-filter="capacity" data-value="1"
+                        onclick="toggleFilter(this)">1</button>
+                    <button class="filter-button" data-filter="capacity" data-value="2"
+                        onclick="toggleFilter(this)">2</button>
+                    <button class="filter-button" data-filter="capacity" data-value="3"
+                        onclick="toggleFilter(this)">3</button>
+                    <button class="filter-button" data-filter="capacity" data-value="4"
+                        onclick="toggleFilter(this)">4</button>
+                    <button class="filter-button" data-filter="capacity" data-value="5"
+                        onclick="toggleFilter(this)">5</button>
+                </div>
+            </div>
+        </div>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th class="sortable" onclick="sortTable(0)">Item</th>
+                    <th class="sortable" onclick="sortTable(1)">Section</th>
+                    <th class="sortable" onclick="sortTable(2)">Type</th>
+                    <th class="sortable" onclick="sortTable(3)">Sub-Type</th>
+                    <th class="sortable" onclick="sortTable(4)">Consealable</th>
+                    <th class="sortable" onclick="sortTable(5)">Prestige</th>
+                    <th class="sortable" onclick="sortTable(6)">Rarity</th>
+                    <th class="sortable" onclick="sortTable(7)">Capacity</th>
+                    <th class="sortable" onclick="sortTable(8)">Price</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>"El Matador"</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>20000</td>
+                </tr>
+                <tr>
+                    <td>"Good Quark Vol.3" VHS Tape</td>
+                    <td>Thematic Weapons (Splitter)</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>"Rude Ruby"</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>5400</td>
+                </tr>
+                <tr>
+                    <td>Amputation Knife</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>2600</td>
+                </tr>
+                <tr>
+                    <td>Antique Carved Knife</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>20000</td>
+                </tr>
+                <tr>
+                    <td>Antique Emetic Syringe</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Emetic, Syringe</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Antique Lethal Syringe</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Lethal, Syringe</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Antique Sedative Syringe</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Sedative, Syringe</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Assassin's HWK21 Covert</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Bartoli 12G</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>3000</td>
+                </tr>
+                <tr>
+                    <td>Bartoli 12G Short H</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>3500</td>
+                </tr>
+                <tr>
+                    <td>Bartoli 75R</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>2700</td>
+                </tr>
+                <tr>
+                    <td>Bartoli 75S</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>3200</td>
+                </tr>
+                <tr>
+                    <td>Bartoli Hunting Shotgun</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>4000</td>
+                </tr>
+                <tr>
+                    <td>Bartoli Woodsman Hunting Rifle</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>5</td>
+                    <td>4200</td>
+                </tr>
+                <tr>
+                    <td>Baseball Bat</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal, Baseball Bat</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Bat Shuriken</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Shuriken</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>14000</td>
+                </tr>
+                <tr>
+                    <td>Breaching Charge MK III</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Burial Dagger</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>13300</td>
+                </tr>
+                <tr>
+                    <td>Chloroform Flask</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Sedative</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Circumcision Knife</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>5200</td>
+                </tr>
+                <tr>
+                    <td>Claw Hammer</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Collector's Coin</td>
+                    <td>Melee Weapons</td>
+                    <td>Tool</td>
+                    <td>Distraction</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>Collector's Crowbar</td>
+                    <td>Melee Weapons</td>
+                    <td>Tool</td>
+                    <td>Crowbar, Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>3</td>
+                    <td>15000</td>
+                </tr>
+                <tr>
+                    <td>Collector's Kalmer Sedative Edition</td>
+                    <td>Melee Weapons</td>
+                    <td>Dart Gun</td>
+                    <td>Sedative</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>3</td>
+                    <td>37000</td>
+                </tr>
+                <tr>
+                    <td>Collector's Lockpick</td>
+                    <td>Melee Weapons</td>
+                    <td>Tool</td>
+                    <td>Lockpick</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>30000</td>
+                </tr>
+                <tr>
+                    <td>Collector's Sieker Emetic Edition</td>
+                    <td>Melee Weapons</td>
+                    <td>Dart Gun</td>
+                    <td>Emetic</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>3</td>
+                    <td>40000</td>
+                </tr>
+                <tr>
+                    <td>Concealable Baton</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>6600</td>
+                </tr>
+                <tr>
+                    <td>Concealable Knife</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>8500</td>
+                </tr>
+                <tr>
+                    <td>Concept 5</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>6000</td>
+                </tr>
+                <tr>
+                    <td>Concussion Grenade</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Grenade</td>
+                    <td>Concussion</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Custom 5mm DTI</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>10300</td>
+                </tr>
+                <tr>
+                    <td>DAK Black Covert</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>10400</td>
+                </tr>
+                <tr>
+                    <td>DAK DTI</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>11900</td>
+                </tr>
+                <tr>
+                    <td>DAK X2</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>6100</td>
+                </tr>
+                <tr>
+                    <td>DAK X2 Covert</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>11500</td>
+                </tr>
+                <tr>
+                    <td>DAK X2 Covert Special</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>14500</td>
+                </tr>
+                <tr>
+                    <td>Disposable Scrambler</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Key Hacker</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Druzhina 34</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>4</td>
+                    <td>9700</td>
+                </tr>
+                <tr>
+                    <td>Druzhina 34 DTI</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>4</td>
+                    <td>7200</td>
+                </tr>
+                <tr>
+                    <td>Druzhina 34 ICA Arctic</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>3</td>
+                    <td>17400</td>
+                </tr>
+                <tr>
+                    <td>Eiffel Tower Knife</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>10800</td>
+                </tr>
+                <tr>
+                    <td>Electronic Key Hacker</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Key Hacker</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Electronic Key Hacker MK III</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Key Hacker</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Emetic Grenade</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Grenade</td>
+                    <td>Emetic</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Emetic Pills</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Emetic</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Emetic Poison Vial</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Emetic</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Enram HV</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>5800</td>
+                </tr>
+                <tr>
+                    <td>Enram HV CM</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>7500</td>
+                </tr>
+                <tr>
+                    <td>Enram HV Covert</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>12300</td>
+                </tr>
+                <tr>
+                    <td>Fiber Wire</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Fiber Wire, Lethal</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>Flash Grenade MK III</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Grenade</td>
+                    <td>Flash</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Folding Knife</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>2200</td>
+                </tr>
+                <tr>
+                    <td>Fragmentation Grenade</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Grenade</td>
+                    <td>Fragmentation</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Fusil G1-4</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>5</td>
+                    <td>3900</td>
+                </tr>
+                <tr>
+                    <td>Fusil G1-4/C</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>3900</td>
+                </tr>
+                <tr>
+                    <td>Fusil G2</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>5</td>
+                    <td>3600</td>
+                </tr>
+                <tr>
+                    <td>Golden Dragon Scissors</td>
+                    <td>Thematic Weapons (Infiltrator)</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>5800</td>
+                </tr>
+                <tr>
+                    <td>Golden Sawed-Off Bartoli 12G</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>21200</td>
+                </tr>
+                <tr>
+                    <td>Hackl 9R</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>2500</td>
+                </tr>
+                <tr>
+                    <td>Hackl 9S</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Hackl 9S Covert</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>8500</td>
+                </tr>
+                <tr>
+                    <td>Hackl Leviathan Sniper Rifle Covert</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>35400</td>
+                </tr>
+                <tr>
+                    <td>Handymand Wrench</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>700</td>
+                </tr>
+                <tr>
+                    <td>HF Championship Bat</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal, Baseball Bat</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>7500</td>
+                </tr>
+                <tr>
+                    <td>HWK21</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>3500</td>
+                </tr>
+                <tr>
+                    <td>HWK21 Covert</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>7000</td>
+                </tr>
+                <tr>
+                    <td>HWK21 Pale</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>4100</td>
+                </tr>
+                <tr>
+                    <td>HWK21 Pale Homemade Silencer</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>8800</td>
+                </tr>
+                <tr>
+                    <td>HX-10</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>3800</td>
+                </tr>
+                <tr>
+                    <td>HX-7</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>3500</td>
+                </tr>
+                <tr>
+                    <td>HX-7 Covert</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>ICA Bartoli Woodsman Hunting Rifle Covert</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>3</td>
+                    <td>18200</td>
+                </tr>
+                <tr>
+                    <td>ICA Combat Axe</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Axe</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>4400</td>
+                </tr>
+                <tr>
+                    <td>ICA DTI Stealth</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>13200</td>
+                </tr>
+                <tr>
+                    <td>ICA Explosive Phone</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Flash Phone</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Remote</td>
+                    <td>Flash</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Impact Explosive</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Impact</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Micro Remote Explosive</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Oustanding Service Coin</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Distraction</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Proximity Concussion Device MK III</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Proximity</td>
+                    <td>Concussion</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Proximity Explosive MK III</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Proximity</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Proximity Micro Explosive</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Proximity</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Proximity Micro Taser</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Taser</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Proximity Taser</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Taser</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Remote Audio Distraction MK III</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Remote</td>
+                    <td>Distraction</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>ICA Remote Concussion Device</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Concussion</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Remote Explosive MK III</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Remote Flash Device</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Remote</td>
+                    <td>Flash</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Remote Micro Audio Distraction</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Remote</td>
+                    <td>Distraction</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>1300</td>
+                </tr>
+                <tr>
+                    <td>ICA Remote Micro Taser</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Taser</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA Remote Taser</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Taser</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA SMG Raptor</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>5500</td>
+                </tr>
+                <tr>
+                    <td>ICA SMG Raptor Covert</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>13300</td>
+                </tr>
+                <tr>
+                    <td>ICA SMG White Raptor Covert</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>10700</td>
+                </tr>
+                <tr>
+                    <td>ICA Tactical Shotgun</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>5600</td>
+                </tr>
+                <tr>
+                    <td>ICA Tactical Shotgun Covert</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>9800</td>
+                </tr>
+                <tr>
+                    <td>ICA Tactical White Shotgun Covert</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>11600</td>
+                </tr>
+                <tr>
+                    <td>ICA Titanium Crowbar</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Crowbar, Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>ICA Tripwire Mine</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Proximity</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>ICA19</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>12500</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Black Lily</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>17900</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Black Trinity</td>
+                    <td>Thematic Weapons (Trinity)</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>21000</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Chrome</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>18400</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Classicballer</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>4700</td>
+                </tr>
+                <tr>
+                    <td>ICA19 F/A</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>7200</td>
+                </tr>
+                <tr>
+                    <td>ICA19 F/A Stealth</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>14700</td>
+                </tr>
+                <tr>
+                    <td>ICA19 F/A Stealth "Ducky" Edition</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>12700</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Goldballer</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>27900</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Red Trinity</td>
+                    <td>Thematic Weapons (Trinity)</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>18000</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Shortballer</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>20700</td>
+                </tr>
+                <tr>
+                    <td>ICA19 Silverballer</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>24700</td>
+                </tr>
+                <tr>
+                    <td>ICA19 White Trinity</td>
+                    <td>Thematic Weapons (Trinity)</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>16000</td>
+                </tr>
+                <tr>
+                    <td>Ice Axe</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Axe</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>14400</td>
+                </tr>
+                <tr>
+                    <td>Ice Pick</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Ice Pick</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>Jade Dagger</td>
+                    <td>Thematic Weapons (Infiltrator)</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>20000</td>
+                </tr>
+                <tr>
+                    <td>Jaeger 7</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>5</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>Jaeger 7 Covert</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>4</td>
+                    <td>13400</td>
+                </tr>
+                <tr>
+                    <td>Jaeger 7 Lancer</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>4</td>
+                    <td>12000</td>
+                </tr>
+                <tr>
+                    <td>Jaeger 7 Tiger</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>4</td>
+                    <td>8100</td>
+                </tr>
+                <tr>
+                    <td>Jaeger 7 Tuatara</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>39200</td>
+                </tr>
+                <tr>
+                    <td>Janbiya</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>11000</td>
+                </tr>
+                <tr>
+                    <td>Jar Of Mom's Spaghetti Sauce</td>
+                    <td>Thematic Weapons (Reflection)</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>313</td>
+                </tr>
+                <tr>
+                    <td>Kali Stick</td>
+                    <td>Thematic Weapons (Infiltrator)</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>9400</td>
+                </tr>
+                <tr>
+                    <td>Kalmer 2 - Tranquilizer</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Dart Gun</td>
+                    <td>Sedative</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>3700</td>
+                </tr>
+                <tr>
+                    <td>Katana</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Katana</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>19200</td>
+                </tr>
+                <tr>
+                    <td>Kronstadt Explosive Pen (Gen 2)</td>
+                    <td>Thematic Weapons (Undying)</td>
+                    <td>Impact</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Kronstadt IOI-1998X Surround Earphones</td>
+                    <td>Thematic Weapons (Undying)</td>
+                    <td>Melee</td>
+                    <td>Fiber Wire, Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>9000</td>
+                </tr>
+                <tr>
+                    <td>Kronstadt Mini Flash Robo XOI-2900</td>
+                    <td>Thematic Weapons (Undying)</td>
+                    <td>Remote</td>
+                    <td>Flash</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Krugermeier 2-2</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>14100</td>
+                </tr>
+                <tr>
+                    <td>Krugermeier 2-2 Silver</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>11700</td>
+                </tr>
+                <tr>
+                    <td>Kukri Knife</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>5700</td>
+                </tr>
+                <tr>
+                    <td>Lethal Pills</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Lethal Poison Vial</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Lockpick MK III</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Lockpick</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>3000</td>
+                </tr>
+                <tr>
+                    <td>Mace</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>6300</td>
+                </tr>
+                <tr>
+                    <td>Machete</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>2400</td>
+                </tr>
+                <tr>
+                    <td>Masamune</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Katana</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>32000</td>
+                </tr>
+                <tr>
+                    <td>Modern Emetic Syringe</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Emetic, Syringe</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Modern Lethal Syringe</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Lethal, Syringe</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Modern Sedative Syringe</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Sedative, Syringe</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Mr. Chainsaw Jr.</td>
+                    <td>Thematic Weapons (Reflection)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>3</td>
+                    <td>1800</td>
+                </tr>
+                <tr>
+                    <td>Oil Canister</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Trap, Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Okinawan Tonfa</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>5500</td>
+                </tr>
+                <tr>
+                    <td>Police Baton</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>3000</td>
+                </tr>
+                <tr>
+                    <td>Professional Screwdriver</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>Proximity Explosive Duck</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Proximity</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Proximity Semtex Demo Block MK III</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Proximity</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Quickdraw</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Fiber Wire, Lethal</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>5200</td>
+                </tr>
+                <tr>
+                    <td>Remote Concussion Collector's Duck</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Concussion</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Remote Concussion Rubber Duck</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Concussion</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Remote Emetic Gas Device</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Remote</td>
+                    <td>Emetic</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Remote EMP Charge</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>EMP</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Remote Explosive</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>3</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Remote Explosive Classic Rubber Duck</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Remote Explosive Devil Rubber Duck</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Remote Semtex Demo Block MK III</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>RS-15</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>17000</td>
+                </tr>
+                <tr>
+                    <td>Saber</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>11200</td>
+                </tr>
+                <tr>
+                    <td>Sapper's Axe</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Axe</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>12100</td>
+                </tr>
+                <tr>
+                    <td>Sawed-off Bartoli 12G</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>8900</td>
+                </tr>
+                <tr>
+                    <td>Sedative Pills</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Sedative</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Sedative Poison Vial</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Poison</td>
+                    <td>Sedative</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Shashka A33</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>5</td>
+                    <td>3300</td>
+                </tr>
+                <tr>
+                    <td>Shashka A33 Covert</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>12000</td>
+                </tr>
+                <tr>
+                    <td>Shashka A33 Gold</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>14400</td>
+                </tr>
+                <tr>
+                    <td>Shashka A33 H</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>5100</td>
+                </tr>
+                <tr>
+                    <td>Shuriken</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Shuriken</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>9000</td>
+                </tr>
+                <tr>
+                    <td>Sieger 300</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>6500</td>
+                </tr>
+                <tr>
+                    <td>Sieger 300 Advanced</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>15600</td>
+                </tr>
+                <tr>
+                    <td>Sieger 300 Ghost</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>39500</td>
+                </tr>
+                <tr>
+                    <td>Sieger 300 Tactical</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>4</td>
+                    <td>14700</td>
+                </tr>
+                <tr>
+                    <td>Sieger 300 Viper</td>
+                    <td>Sniper Rifles</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>4</td>
+                    <td>16100</td>
+                </tr>
+                <tr>
+                    <td>Sieger AR552 Tactical</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>4600</td>
+                </tr>
+                <tr>
+                    <td>Sieker 1</td>
+                    <td>Freelancer Tools (Poisons)</td>
+                    <td>Dart Gun</td>
+                    <td>Emetic</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>4000</td>
+                </tr>
+                <tr>
+                    <td>Spooky Bat</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal, Baseball Bat</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>Striker</td>
+                    <td>Pistols</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>13000</td>
+                </tr>
+                <tr>
+                    <td>TAC-4 AR Auto</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>4800</td>
+                </tr>
+                <tr>
+                    <td>TAC-4 AR Desert</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>16100</td>
+                </tr>
+                <tr>
+                    <td>TAC-4 AR Stealth</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>14500</td>
+                </tr>
+                <tr>
+                    <td>TAC-4 S/A</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>12300</td>
+                </tr>
+                <tr>
+                    <td>TAC-4 S/A Jungle</td>
+                    <td>Assault Rifles</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>13300</td>
+                </tr>
+                <tr>
+                    <td>TAC-SMG</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>4300</td>
+                </tr>
+                <tr>
+                    <td>TAC-SMG Covert</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>11200</td>
+                </tr>
+                <tr>
+                    <td>TAC-SMG S</td>
+                    <td>SMGs</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>11000</td>
+                </tr>
+                <tr>
+                    <td>Tactical Bartoli 12G</td>
+                    <td>Shotguns</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>4</td>
+                    <td>3200</td>
+                </tr>
+                <tr>
+                    <td>Tanto</td>
+                    <td>Melee Weapons</td>
+                    <td>Melee</td>
+                    <td>Lethal, Katana</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>13600</td>
+                </tr>
+                <tr>
+                    <td>The "Casino Monarchique" Chip (1.000.000)</td>
+                    <td>Thematic Weapons (Banker)</td>
+                    <td>Tool</td>
+                    <td>Distraction</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>The Ancestral Assault Rifle</td>
+                    <td>Thematic Weapons (Ancestral)</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>13900</td>
+                </tr>
+                <tr>
+                    <td>The Ancestral Knife</td>
+                    <td>Thematic Weapons (Ancestral)</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>11500</td>
+                </tr>
+                <tr>
+                    <td>The Ancestral Pistol</td>
+                    <td>Thematic Weapons (Ancestral)</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>15300</td>
+                </tr>
+                <tr>
+                    <td>The Ancestral Shotgun</td>
+                    <td>Thematic Weapons (Ancestral)</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>10200</td>
+                </tr>
+                <tr>
+                    <td>The Ancestral Sniper Rifle</td>
+                    <td>Thematic Weapons (Ancestral)</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>38900</td>
+                </tr>
+                <tr>
+                    <td>The Banker Rope</td>
+                    <td>Thematic Weapons (Banker)</td>
+                    <td>Melee</td>
+                    <td>Fiber Wire, Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>8400</td>
+                </tr>
+                <tr>
+                    <td>The Banker Silenced Pistol</td>
+                    <td>Thematic Weapons (Banker)</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>20600</td>
+                </tr>
+                <tr>
+                    <td>The Club Boom 12" Vinyl Sampler</td>
+                    <td>Thematic Weapons (Drop)</td>
+                    <td>Melee</td>
+                    <td>Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>21000</td>
+                </tr>
+                <tr>
+                    <td>The Concrete Assault Rifle</td>
+                    <td>Thematic Weapons (Street Art)</td>
+                    <td>Assault Rifle</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>11300</td>
+                </tr>
+                <tr>
+                    <td>The Concrete Bat</td>
+                    <td>Thematic Weapons (Street Art)</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal, Baseball Bat</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>8600</td>
+                </tr>
+                <tr>
+                    <td>The Concrete Bunny Pistol</td>
+                    <td>Thematic Weapons (Street Art)</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>18700</td>
+                </tr>
+                <tr>
+                    <td>The Concrete Shotgun</td>
+                    <td>Thematic Weapons (Street Art)</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>8900</td>
+                </tr>
+                <tr>
+                    <td>The Concrete Sniper Rifle</td>
+                    <td>Thematic Weapons (Street Art)</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>36900</td>
+                </tr>
+                <tr>
+                    <td>The Disruptor Cane</td>
+                    <td>Thematic Weapons (Disruptor)</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>20000</td>
+                </tr>
+                <tr>
+                    <td>The Disruptor Kettlebell</td>
+                    <td>Thematic Weapons (Disruptor)</td>
+                    <td>Melee</td>
+                    <td>Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>12500</td>
+                </tr>
+                <tr>
+                    <td>The Disruptor Resistance Band</td>
+                    <td>Thematic Weapons (Disruptor)</td>
+                    <td>Melee</td>
+                    <td>Fiber Wire, Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>1</td>
+                    <td>5200</td>
+                </tr>
+                <tr>
+                    <td>The Makeshift Katana</td>
+                    <td>Thematic Weapons (Makeshift)</td>
+                    <td>Melee</td>
+                    <td>Lethal, Katana</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>19900</td>
+                </tr>
+                <tr>
+                    <td>The Makeshift Scrap Assault Rifle</td>
+                    <td>Thematic Weapons (Makeshift)</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>10300</td>
+                </tr>
+                <tr>
+                    <td>The Makeshift Scrap Shotgun</td>
+                    <td>Thematic Weapons (Makeshift)</td>
+                    <td>Shotgun</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>4900</td>
+                </tr>
+                <tr>
+                    <td>The Oranamental Pistol</td>
+                    <td>Thematic Weapons (Ornamental)</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>9500</td>
+                </tr>
+                <tr>
+                    <td>The Ornamental Assault Rifle</td>
+                    <td>Thematic Weapons (Ornamental)</td>
+                    <td>Assault Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>3</td>
+                    <td>15000</td>
+                </tr>
+                <tr>
+                    <td>The Ornamental Katana</td>
+                    <td>Thematic Weapons (Ornamental)</td>
+                    <td>Melee</td>
+                    <td>Lethal, Katana</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>18700</td>
+                </tr>
+                <tr>
+                    <td>The Ornamental Shotgun</td>
+                    <td>Thematic Weapons (Ornamental)</td>
+                    <td>Shotgun</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>17100</td>
+                </tr>
+                <tr>
+                    <td>The Ornamental SMG</td>
+                    <td>Thematic Weapons (Ornamental)</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>37500</td>
+                </tr>
+                <tr>
+                    <td>The Ornamental Sniper Rifle</td>
+                    <td>Thematic Weapons (Ornamental)</td>
+                    <td>Sniper Rifle</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>36800</td>
+                </tr>
+                <tr>
+                    <td>The Pale Duck</td>
+                    <td>Freelancer Tools (Explosives)</td>
+                    <td>Remote</td>
+                    <td>Explosive</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>The Prank Pistol</td>
+                    <td>Thematic Weapons (Reflection)</td>
+                    <td>Pistol</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>21000</td>
+                </tr>
+                <tr>
+                    <td>The Red Light Flash Grenade</td>
+                    <td>Thematic Weapons (Drop)</td>
+                    <td>Grenade</td>
+                    <td>Flash</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>2</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>The Scrap Gun</td>
+                    <td>Thematic Weapons (Makeshift)</td>
+                    <td>Pistol</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>1</td>
+                    <td>9900</td>
+                </tr>
+                <tr>
+                    <td>The Scrap SMG</td>
+                    <td>Thematic Weapons (Makeshift)</td>
+                    <td>SMG</td>
+                    <td>Silenced, Non-Piercing</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>10100</td>
+                </tr>
+                <tr>
+                    <td>The Scrappy Sniper Rifle</td>
+                    <td>Thematic Weapons (Makeshift)</td>
+                    <td>Sniper Rifle</td>
+                    <td>Unsilenced, Piercing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-rare">Rare</span></td>
+                    <td>4</td>
+                    <td>10200</td>
+                </tr>
+                <tr>
+                    <td>The Shark SMG</td>
+                    <td>Thematic Weapons (Street Art)</td>
+                    <td>SMG</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>1</td>
+                    <td>24600</td>
+                </tr>
+                <tr>
+                    <td>The Splitter Kukri Knife</td>
+                    <td>Thematic Weapons (Splitter)</td>
+                    <td>Melee</td>
+                    <td>Lethal, Knife</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-epic">Epic</span></td>
+                    <td>2</td>
+                    <td>12000</td>
+                </tr>
+                <tr>
+                    <td>The Splitter SMG</td>
+                    <td>Thematic Weapons (Splitter)</td>
+                    <td>SMG</td>
+                    <td>Unsilenced, Non-Piercing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td><span class="rarity-legendary">Legendary</span></td>
+                    <td>2</td>
+                    <td>23500</td>
+                </tr>
+                <tr>
+                    <td>Water Canister</td>
+                    <td>Freelancer Tools (Tools)</td>
+                    <td>Tool</td>
+                    <td>Trap, Non-Lethal</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td><span class="rarity-common">Common</span></td>
+                    <td>2</td>
+                    <td>600</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div id="noResults" class="no-results hidden">
+            No entries match the selected filters.
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
