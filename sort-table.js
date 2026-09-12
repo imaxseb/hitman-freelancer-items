@@ -1,13 +1,42 @@
 let currentSortColumn = -1;
 let sortDirection = 'asc';
+const rarityOrder = ['common', 'rare', 'epic', 'legendary'];
 
-function sortTable(columnIndex) {
+function sortItemsMobile() {
+    const columnSelect = document.getElementById('mobileSort');
+    const directionButton = document.getElementById('mobileSortDirectionToggle');
+
+    if (!columnSelect || !directionButton) {
+        return;
+    }
+
+    currentSortColumn = Number(columnSelect.value);
+    directionButton.textContent = sortDirection === 'asc' ? 'Ascending' : 'Descending';
+    sortTable(currentSortColumn, sortDirection);
+}
+
+function toggleSortDirection() {
+    sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+    const directionButton = document.getElementById('mobileSortDirectionToggle');
+    if (directionButton) {
+        directionButton.textContent = sortDirection === 'asc' ? 'Ascending' : 'Descending';
+    }
+
+    const columnSelect = document.getElementById('mobileSort');
+    if (columnSelect) {
+        sortTable(Number(columnSelect.value), sortDirection);
+    }
+}
+
+function sortTable(columnIndex, explicitDirection) {
     const table = document.getElementById('dataTable');
     const tbody = document.getElementById('tableBody');
     const rows = Array.from(tbody.querySelectorAll('tr'));
 
-    // Update sort direction
-    if (currentSortColumn === columnIndex) {
+    if (explicitDirection !== undefined) {
+        sortDirection = explicitDirection;
+        currentSortColumn = columnIndex;
+    } else if (currentSortColumn === columnIndex) {
         sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
     } else {
         sortDirection = 'asc';
@@ -28,9 +57,16 @@ function sortTable(columnIndex) {
         let aValue = a.cells[columnIndex].textContent.trim();
         let bValue = b.cells[columnIndex].textContent.trim();
 
+        if (columnIndex === 6) {
+            const aRarity = rarityOrder.indexOf(aValue.toLowerCase());
+            const bRarity = rarityOrder.indexOf(bValue.toLowerCase());
+            const rarityComparison = aRarity - bRarity;
+            return sortDirection === 'asc' ? rarityComparison : -rarityComparison;
+        }
+
         // Try to convert to numbers for numeric comparison
-        const aNum = parseFloat(aValue);
-        const bNum = parseFloat(bValue);
+        const aNum = parseFloat(aValue.replace(/,/g, ''));
+        const bNum = parseFloat(bValue.replace(/,/g, ''));
 
         if (!isNaN(aNum) && !isNaN(bNum)) {
             return sortDirection === 'asc' ? aNum - bNum : bNum - aNum;
@@ -45,5 +81,11 @@ function sortTable(columnIndex) {
     });
 
     // Reattach sorted rows
-    rows.forEach(row => tbody.appendChild(row));
+    rows.forEach(row => {
+        tbody.appendChild(row);
+        const card = document.querySelector(`[data-card-index="${row.dataset.itemIndex}"]`);
+        if (card) {
+            document.getElementById('cardGrid').appendChild(card);
+        }
+    });
 }
