@@ -1,0 +1,243 @@
+﻿Item,Section,Type,Sub-Type,Concealable,Prestige,Rarity,Capacity,Price
+Fusil G1-4,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,5,3900
+Fusil G1-4/C,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,4,3900
+Fusil G2,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,5,3600
+RS-15,Assault Rifles,Assault Rifle,"Silenced, Non-Piercing",No,Yes,Epic,2,17000
+Shashka A33,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,5,3300
+Shashka A33 Covert,Assault Rifles,Assault Rifle,"Silenced, Non-Piercing",No,Yes,Rare,3,12000
+Shashka A33 Gold,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Epic,2,14400
+Shashka A33 H,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Rare,3,5100
+Sieger AR552 Tactical,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,4,4600
+TAC-4 AR Auto,Assault Rifles,Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,4,4800
+TAC-4 AR Desert,Assault Rifles,Assault Rifle,"Silenced, Non-Piercing",No,Yes,Epic,2,16100
+TAC-4 AR Stealth,Assault Rifles,Assault Rifle,"Silenced, Non-Piercing",No,Yes,Rare,3,14500
+TAC-4 S/A,Assault Rifles,Assault Rifle,"Silenced, Non-Piercing",No,Yes,Rare,3,12300
+TAC-4 S/A Jungle,Assault Rifles,Assault Rifle,"Silenced, Non-Piercing",No,Yes,Rare,3,13300
+Breaching Charge MK III,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Common,3,500
+Concussion Grenade,Freelancer Tools (Explosives),Grenade,Concussion,Yes,No,Rare,1,500
+Emetic Grenade,Freelancer Tools (Explosives),Grenade,Emetic,Yes,No,Rare,2,500
+Flash Grenade MK III,Freelancer Tools (Explosives),Grenade,Flash,Yes,No,Common,2,500
+Fragmentation Grenade,Freelancer Tools (Explosives),Grenade,Fragmentation,Yes,No,Common,2,500
+ICA Explosive Phone,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Rare,1,500
+ICA Impact Explosive,Freelancer Tools (Explosives),Impact,Explosive,Yes,No,Rare,2,500
+ICA Micro Remote Explosive,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Rare,1,500
+ICA Proximity Concussion Device MK III,Freelancer Tools (Explosives),Proximity,Concussion,Yes,No,Common,3,500
+ICA Proximity Explosive MK III,Freelancer Tools (Explosives),Proximity,Explosive,Yes,No,Common,2,500
+ICA Proximity Micro Explosive,Freelancer Tools (Explosives),Proximity,Explosive,Yes,No,Rare,1,500
+ICA Remote Concussion Device,Freelancer Tools (Explosives),Remote,Concussion,Yes,No,Rare,2,500
+ICA Remote Explosive MK III,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Rare,3,500
+ICA Tripwire Mine,Freelancer Tools (Explosives),Proximity,Explosive,Yes,No,Rare,2,500
+Proximity Explosive Duck,Freelancer Tools (Explosives),Proximity,Explosive,Yes,No,Common,3,500
+Proximity Semtex Demo Block MK III,Freelancer Tools (Explosives),Proximity,Explosive,Yes,No,Common,4,500
+Remote Concussion Collector's Duck,Freelancer Tools (Explosives),Remote,Concussion,Yes,No,Epic,1,500
+Remote Concussion Rubber Duck,Freelancer Tools (Explosives),Remote,Concussion,Yes,No,Epic,1,500
+Remote Explosive,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Common,3,500
+Remote Explosive Classic Rubber Duck,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Epic,2,500
+Remote Explosive Devil Rubber Duck,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Legendary,1,500
+Remote Semtex Demo Block MK III,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Common,4,500
+The Pale Duck,Freelancer Tools (Explosives),Remote,Explosive,Yes,No,Rare,2,500
+Antique Emetic Syringe,Freelancer Tools (Poisons),Poison,"Emetic, Syringe",Yes,No,Rare,1,500
+Antique Lethal Syringe,Freelancer Tools (Poisons),Poison,"Lethal, Syringe",Yes,No,Rare,1,500
+Antique Sedative Syringe,Freelancer Tools (Poisons),Poison,"Sedative, Syringe",Yes,No,Rare,1,500
+Chloroform Flask,Freelancer Tools (Poisons),Poison,Sedative,Yes,No,Rare,1,500
+Emetic Pills,Freelancer Tools (Poisons),Poison,Emetic,Yes,No,Rare,1,500
+Emetic Poison Vial,Freelancer Tools (Poisons),Poison,Emetic,Yes,No,Common,2,500
+Kalmer 2 - Tranquilizer,Freelancer Tools (Poisons),Dart Gun,Sedative,Yes,No,Rare,3,3700
+Lethal Pills,Freelancer Tools (Poisons),Poison,Lethal,Yes,No,Rare,1,500
+Lethal Poison Vial,Freelancer Tools (Poisons),Poison,Lethal,Yes,No,Common,2,500
+Modern Emetic Syringe,Freelancer Tools (Poisons),Poison,"Emetic, Syringe",Yes,No,Common,2,500
+Modern Lethal Syringe,Freelancer Tools (Poisons),Poison,"Lethal, Syringe",Yes,No,Common,2,500
+Modern Sedative Syringe,Freelancer Tools (Poisons),Poison,"Sedative, Syringe",Yes,No,Common,2,500
+Sedative Pills,Freelancer Tools (Poisons),Poison,Sedative,Yes,No,Rare,1,500
+Sedative Poison Vial,Freelancer Tools (Poisons),Poison,Sedative,Yes,No,Common,2,500
+Sieker 1,Freelancer Tools (Poisons),Dart Gun,Emetic,Yes,No,Rare,3,4000
+Disposable Scrambler,Freelancer Tools (Tools),Tool,Key Hacker,Yes,No,Common,3,500
+Electronic Key Hacker,Freelancer Tools (Tools),Tool,Key Hacker,Yes,No,Rare,2,500
+Electronic Key Hacker MK III,Freelancer Tools (Tools),Tool,Key Hacker,Yes,No,Rare,1,500
+Handymand Wrench,Freelancer Tools (Tools),Tool,Non-Lethal,Yes,No,Common,2,700
+ICA Flash Phone,Freelancer Tools (Tools),Remote,Flash,Yes,No,Rare,2,500
+ICA Oustanding Service Coin,Freelancer Tools (Tools),Tool,Distraction,Yes,No,Rare,1,500
+ICA Proximity Micro Taser,Freelancer Tools (Tools),Tool,Taser,Yes,No,Rare,2,500
+ICA Proximity Taser,Freelancer Tools (Tools),Tool,Taser,Yes,No,Common,3,500
+ICA Remote Audio Distraction MK III,Freelancer Tools (Tools),Remote,Distraction,Yes,No,Common,2,1000
+ICA Remote Flash Device,Freelancer Tools (Tools),Remote,Flash,Yes,No,Common,3,500
+ICA Remote Micro Audio Distraction,Freelancer Tools (Tools),Remote,Distraction,Yes,No,Rare,1,1300
+ICA Remote Micro Taser,Freelancer Tools (Tools),Tool,Taser,Yes,No,Rare,2,500
+ICA Remote Taser,Freelancer Tools (Tools),Tool,Taser,Yes,No,Common,3,500
+ICA Titanium Crowbar,Freelancer Tools (Tools),Tool,"Crowbar, Non-Lethal",Yes,No,Common,3,1500
+Lockpick MK III,Freelancer Tools (Tools),Tool,Lockpick,Yes,No,Rare,1,3000
+Oil Canister,Freelancer Tools (Tools),Tool,"Trap, Non-Lethal",Yes,No,Common,2,500
+Professional Screwdriver,Freelancer Tools (Tools),Tool,Lethal,Yes,No,Common,3,1000
+Remote Emetic Gas Device,Freelancer Tools (Tools),Remote,Emetic,Yes,No,Rare,1,500
+Remote EMP Charge,Freelancer Tools (Tools),Tool,EMP,Yes,No,Rare,2,500
+Water Canister,Freelancer Tools (Tools),Tool,"Trap, Non-Lethal",Yes,No,Common,2,600
+Amputation Knife,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Common,3,2600
+Antique Carved Knife,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Legendary,1,20000
+Baseball Bat,Melee Weapons,Melee,"Non-Lethal, Baseball Bat",No,Yes,Common,4,2000
+Bat Shuriken,Melee Weapons,Melee,"Lethal, Shuriken",Yes,Yes,Epic,1,14000
+Burial Dagger,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Epic,2,13300
+Circumcision Knife,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Rare,2,5200
+Claw Hammer,Melee Weapons,Melee,Non-Lethal,Yes,Yes,Common,2,2000
+Collector's Coin,Melee Weapons,Tool,Distraction,Yes,Yes,Epic,1,5000
+Collector's Crowbar,Melee Weapons,Tool,"Crowbar, Non-Lethal",Yes,Yes,Epic,3,15000
+Collector's Kalmer Sedative Edition,Melee Weapons,Dart Gun,Sedative,Yes,Yes,Epic,3,37000
+Collector's Lockpick,Melee Weapons,Tool,Lockpick,Yes,Yes,Epic,1,30000
+Collector's Sieker Emetic Edition,Melee Weapons,Dart Gun,Emetic,Yes,Yes,Epic,3,40000
+Concealable Baton,Melee Weapons,Melee,Non-Lethal,Yes,Yes,Rare,2,6600
+Concealable Knife,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Rare,1,8500
+Eiffel Tower Knife,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Epic,2,10800
+Fiber Wire,Melee Weapons,Melee,"Fiber Wire, Lethal",Yes,Yes,Epic,1,10000
+Folding Knife,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Common,3,2200
+HF Championship Bat,Melee Weapons,Melee,"Non-Lethal, Baseball Bat",No,Yes,Rare,2,7500
+ICA Combat Axe,Melee Weapons,Melee,"Lethal, Axe",Yes,Yes,Common,3,4400
+Ice Axe,Melee Weapons,Melee,"Lethal, Axe",Yes,Yes,Epic,2,14400
+Ice Pick,Melee Weapons,Melee,"Lethal, Ice Pick",Yes,Yes,Rare,1,5000
+Janbiya,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Epic,2,11000
+Katana,Melee Weapons,Melee,"Lethal, Katana",No,Yes,Epic,2,19200
+Kukri Knife,Melee Weapons,Melee,"Lethal, Knife",Yes,Yes,Rare,2,5700
+Mace,Melee Weapons,Melee,Non-Lethal,No,Yes,Rare,2,6300
+Machete,Melee Weapons,Melee,"Lethal, Knife",No,Yes,Common,3,2400
+Masamune,Melee Weapons,Melee,"Lethal, Katana",No,Yes,Legendary,1,32000
+Okinawan Tonfa,Melee Weapons,Melee,Non-Lethal,Yes,Yes,Rare,2,5500
+Police Baton,Melee Weapons,Melee,Non-Lethal,Yes,Yes,Common,3,3000
+Quickdraw,Melee Weapons,Melee,"Fiber Wire, Lethal",Yes,Yes,Rare,1,5200
+Saber,Melee Weapons,Melee,Lethal,No,Yes,Rare,3,11200
+Sapper's Axe,Melee Weapons,Melee,"Lethal, Axe",No,Yes,Rare,2,12100
+Shuriken,Melee Weapons,Melee,"Lethal, Shuriken",Yes,Yes,Rare,1,9000
+Spooky Bat,Melee Weapons,Melee,"Non-Lethal, Baseball Bat",No,Yes,Epic,2,10000
+Tanto,Melee Weapons,Melee,"Lethal, Katana",Yes,Yes,Rare,2,13600
+"""El Matador""",Pistols,Pistol,"Unsilenced, Piercing",Yes,Yes,Epic,2,20000
+"""Rude Ruby""",Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Rare,2,5400
+Assassin's HWK21 Covert,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Rare,2,0
+Bartoli 75R,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,2700
+Bartoli 75S,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,3200
+Concept 5,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Rare,3,6000
+Custom 5mm DTI,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,1,10300
+Hackl 9R,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,2500
+Hackl 9S,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,2000
+Hackl 9S Covert,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Rare,2,8500
+HWK21,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,3500
+HWK21 Covert,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Common,3,7000
+HWK21 Pale,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,4100
+HWK21 Pale Homemade Silencer,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Rare,2,8800
+ICA DTI Stealth,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,2,13200
+ICA19,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Rare,2,12500
+ICA19 Black Lily,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,2,17900
+ICA19 Chrome,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,2,18400
+ICA19 Classicballer,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,4700
+ICA19 F/A,Pistols,Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Common,2,7200
+ICA19 F/A Stealth,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,2,14700
+"ICA19 F/A Stealth ""Ducky"" Edition",Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,2,12700
+ICA19 Goldballer,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Legendary,1,27900
+ICA19 Shortballer,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Legendary,1,20700
+ICA19 Silverballer,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Legendary,1,24700
+Krugermeier 2-2,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,2,14100
+Krugermeier 2-2 Silver,Pistols,Pistol,"Silenced, Non-Piercing",Yes,Yes,Rare,2,11700
+Striker,Pistols,Pistol,"Unsilenced, Piercing",Yes,Yes,Rare,2,0
+Bartoli 12G,Shotguns,Shotgun,"Unsilenced, Non-Piercing",No,Yes,Common,4,3000
+Bartoli 12G Short H,Shotguns,Shotgun,"Unsilenced, Non-Piercing",No,Yes,Common,4,3500
+Bartoli Hunting Shotgun,Shotguns,Shotgun,"Unsilenced, Non-Piercing",No,Yes,Common,4,4000
+Enram HV,Shotguns,Shotgun,"Unsilenced, Non-Piercing",No,Yes,Common,4,5800
+Enram HV CM,Shotguns,Shotgun,"Unsilenced, Non-Piercing",No,Yes,Rare,3,7500
+Enram HV Covert,Shotguns,Shotgun,"Silenced, Non-Piercing",No,Yes,Epic,2,12300
+Golden Sawed-Off Bartoli 12G,Shotguns,Shotgun,"Unsilenced, Non-Piercing",Yes,Yes,Legendary,1,21200
+ICA Tactical Shotgun,Shotguns,Shotgun,"Unsilenced, Non-Piercing",No,Yes,Common,4,5600
+ICA Tactical Shotgun Covert,Shotguns,Shotgun,"Silenced, Non-Piercing",No,Yes,Rare,3,9800
+ICA Tactical White Shotgun Covert,Shotguns,Shotgun,"Silenced, Non-Piercing",No,Yes,Epic,1,11600
+Sawed-off Bartoli 12G,Shotguns,Shotgun,"Unsilenced, Non-Piercing",Yes,Yes,Rare,3,8900
+Tactical Bartoli 12G,Shotguns,Shotgun,"Unsilenced, Non-Piercing",No,Yes,Common,4,3200
+DAK Black Covert,SMGs,SMG,"Silenced, Non-Piercing",No,Yes,Rare,3,10400
+DAK DTI,SMGs,SMG,"Silenced, Non-Piercing",Yes,Yes,Rare,3,11900
+DAK X2,SMGs,SMG,"Unsilenced, Non-Piercing",Yes,Yes,Common,3,6100
+DAK X2 Covert,SMGs,SMG,"Silenced, Non-Piercing",Yes,Yes,Rare,3,11500
+DAK X2 Covert Special,SMGs,SMG,"Silenced, Non-Piercing",Yes,Yes,Epic,2,14500
+HX-10,SMGs,SMG,"Unsilenced, Non-Piercing",No,Yes,Common,4,3800
+HX-7,SMGs,SMG,"Unsilenced, Non-Piercing",No,Yes,Common,4,3500
+HX-7 Covert,SMGs,SMG,"Silenced, Non-Piercing",No,Yes,Rare,3,10000
+ICA SMG Raptor,SMGs,SMG,"Unsilenced, Non-Piercing",No,Yes,Common,4,5500
+ICA SMG Raptor Covert,SMGs,SMG,"Silenced, Non-Piercing",No,Yes,Epic,2,13300
+ICA SMG White Raptor Covert,SMGs,SMG,"Silenced, Non-Piercing",No,Yes,Rare,2,10700
+TAC-SMG,SMGs,SMG,"Unsilenced, Non-Piercing",No,Yes,Common,4,4300
+TAC-SMG Covert,SMGs,SMG,"Silenced, Non-Piercing",No,Yes,Rare,3,11200
+TAC-SMG S,SMGs,SMG,"Silenced, Non-Piercing",No,Yes,Rare,3,11000
+Bartoli Woodsman Hunting Rifle,Sniper Rifles,Sniper Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,5,4200
+Druzhina 34,Sniper Rifles,Sniper Rifle,"Unsilenced, Piercing",No,Yes,Rare,4,9700
+Druzhina 34 DTI,Sniper Rifles,Sniper Rifle,"Unsilenced, Piercing",No,Yes,Rare,4,7200
+Druzhina 34 ICA Arctic,Sniper Rifles,Sniper Rifle,"Silenced, Piercing",No,Yes,Epic,3,17400
+Hackl Leviathan Sniper Rifle Covert,Sniper Rifles,Sniper Rifle,"Silenced, Piercing",No,Yes,Legendary,2,35400
+ICA Bartoli Woodsman Hunting Rifle Covert,Sniper Rifles,Sniper Rifle,"Silenced, Piercing",No,Yes,Epic,3,18200
+Jaeger 7,Sniper Rifles,Sniper Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,5,5000
+Jaeger 7 Covert,Sniper Rifles,Sniper Rifle,"Silenced, Non-Piercing",No,Yes,Rare,4,13400
+Jaeger 7 Lancer,Sniper Rifles,Sniper Rifle,"Unsilenced, Piercing",No,Yes,Rare,4,12000
+Jaeger 7 Tiger,Sniper Rifles,Sniper Rifle,"Unsilenced, Non-Piercing",No,Yes,Rare,4,8100
+Jaeger 7 Tuatara,Sniper Rifles,Sniper Rifle,"Silenced, Non-Piercing",No,Yes,Legendary,2,39200
+Sieger 300,Sniper Rifles,Sniper Rifle,"Unsilenced, Non-Piercing",No,Yes,Common,4,6500
+Sieger 300 Advanced,Sniper Rifles,Sniper Rifle,"Silenced, Non-Piercing",No,Yes,Epic,2,15600
+Sieger 300 Ghost,Sniper Rifles,Sniper Rifle,"Silenced, Non-Piercing",No,Yes,Legendary,2,39500
+Sieger 300 Tactical,Sniper Rifles,Sniper Rifle,"Silenced, Non-Piercing",No,Yes,Rare,4,14700
+Sieger 300 Viper,Sniper Rifles,Sniper Rifle,"Silenced, Non-Piercing",No,Yes,Epic,4,16100
+The Ancestral Assault Rifle,Thematic Weapons (Ancestral),Assault Rifle,"Unsilenced, Non-Piercing",No,Yes,Rare,3,13900
+The Ancestral Knife,Thematic Weapons (Ancestral),Melee,"Lethal, Knife",Yes,Yes,Epic,2,11500
+The Ancestral Pistol,Thematic Weapons (Ancestral),Pistol,"Silenced, Non-Piercing",Yes,Yes,Epic,2,15300
+The Ancestral Shotgun,Thematic Weapons (Ancestral),Shotgun,"Unsilenced, Non-Piercing",No,Yes,Rare,3,10200
+The Ancestral Sniper Rifle,Thematic Weapons (Ancestral),Sniper Rifle,"Silenced, Piercing",No,Yes,Legendary,1,38900
+"The ""Casino Monarchique"" Chip (1.000.000)",Thematic Weapons (Banker),Tool,Distraction,Yes,No,Rare,1,5000
+The Banker Rope,Thematic Weapons (Banker),Melee,"Fiber Wire, Lethal",Yes,No,Epic,1,8400
+The Banker Silenced Pistol,Thematic Weapons (Banker),Pistol,"Silenced, Non-Piercing",Yes,No,Legendary,2,20600
+The Disruptor Cane,Thematic Weapons (Disruptor),Melee,Non-Lethal,No,No,Legendary,2,20000
+The Disruptor Kettlebell,Thematic Weapons (Disruptor),Melee,Non-Lethal,Yes,No,Epic,2,12500
+The Disruptor Resistance Band,Thematic Weapons (Disruptor),Melee,"Fiber Wire, Lethal",Yes,No,Rare,1,5200
+"The Club Boom 12"" Vinyl Sampler",Thematic Weapons (Drop),Melee,Lethal,Yes,No,Legendary,1,21000
+The Red Light Flash Grenade,Thematic Weapons (Drop),Grenade,Flash,Yes,No,Rare,2,500
+Golden Dragon Scissors,Thematic Weapons (Infiltrator),Melee,"Lethal, Knife",Yes,No,Rare,2,5800
+Jade Dagger,Thematic Weapons (Infiltrator),Melee,"Lethal, Knife",Yes,No,Legendary,1,20000
+Kali Stick,Thematic Weapons (Infiltrator),Melee,Non-Lethal,No,No,Epic,2,9400
+The Makeshift Katana,Thematic Weapons (Makeshift),Melee,"Lethal, Katana",No,No,Legendary,1,19900
+The Makeshift Scrap Assault Rifle,Thematic Weapons (Makeshift),Assault Rifle,"Silenced, Non-Piercing",No,No,Epic,2,10300
+The Makeshift Scrap Shotgun,Thematic Weapons (Makeshift),Shotgun,"Unsilenced, Non-Piercing",Yes,No,Rare,3,4900
+The Scrap Gun,Thematic Weapons (Makeshift),Pistol,"Silenced, Non-Piercing",Yes,No,Epic,1,9900
+The Scrap SMG,Thematic Weapons (Makeshift),SMG,"Silenced, Non-Piercing",Yes,No,Epic,2,10100
+The Scrappy Sniper Rifle,Thematic Weapons (Makeshift),Sniper Rifle,"Unsilenced, Piercing",No,No,Rare,4,10200
+The Oranamental Pistol,Thematic Weapons (Ornamental),Pistol,"Unsilenced, Non-Piercing",Yes,Yes,Rare,2,9500
+The Ornamental Assault Rifle,Thematic Weapons (Ornamental),Assault Rifle,"Silenced, Non-Piercing",No,Yes,Rare,3,15000
+The Ornamental Katana,Thematic Weapons (Ornamental),Melee,"Lethal, Katana",No,Yes,Epic,2,18700
+The Ornamental Shotgun,Thematic Weapons (Ornamental),Shotgun,"Silenced, Non-Piercing",No,Yes,Epic,2,17100
+The Ornamental SMG,Thematic Weapons (Ornamental),SMG,"Silenced, Non-Piercing",No,Yes,Legendary,1,37500
+The Ornamental Sniper Rifle,Thematic Weapons (Ornamental),Sniper Rifle,"Silenced, Non-Piercing",No,Yes,Legendary,1,36800
+Jar Of Mom's Spaghetti Sauce,Thematic Weapons (Reflection),Melee,Non-Lethal,Yes,No,Rare,2,313
+Mr. Chainsaw Jr.,Thematic Weapons (Reflection),Remote,Explosive,Yes,No,Epic,3,1800
+The Prank Pistol,Thematic Weapons (Reflection),Pistol,"Unsilenced, Non-Piercing",Yes,No,Legendary,2,21000
+"Bartoli 75S ""Lucky Knight""",Thematic Weapons (Requiem),Pistol,"Silenced, Non-Piercing",Yes,No,Legendary,2,23100
+Manypass,Thematic Weapons (Requiem),Tool,Key Hacker,Yes,No,Rare,2,947
+Sickle Sacrificus,Thematic Weapons (Requiem),Melee,Lethal,Yes,No,Epic,2,15170
+"""Good Quark Vol.3"" VHS Tape",Thematic Weapons (Splitter),Melee,Non-Lethal,Yes,No,Rare,2,5000
+The Splitter Kukri Knife,Thematic Weapons (Splitter),Melee,"Lethal, Knife",Yes,No,Epic,2,12000
+The Splitter SMG,Thematic Weapons (Splitter),SMG,"Unsilenced, Non-Piercing",No,No,Legendary,2,23500
+The Concrete Assault Rifle,Thematic Weapons (Street Art),Assault Rifle,"Unsilenced, Non-Piercing",No,No,Rare,3,11300
+The Concrete Bat,Thematic Weapons (Street Art),Melee,"Non-Lethal, Baseball Bat",No,No,Epic,2,8600
+The Concrete Bunny Pistol,Thematic Weapons (Street Art),Pistol,"Silenced, Non-Piercing",Yes,No,Epic,1,18700
+The Concrete Shotgun,Thematic Weapons (Street Art),Shotgun,"Unsilenced, Non-Piercing",No,No,Rare,3,8900
+The Concrete Sniper Rifle,Thematic Weapons (Street Art),Sniper Rifle,"Silenced, Non-Piercing",No,No,Legendary,2,36900
+The Shark SMG,Thematic Weapons (Street Art),SMG,"Unsilenced, Non-Piercing",No,No,Legendary,1,24600
+ICA19 Black Trinity,Thematic Weapons (Trinity),Pistol,"Silenced, Non-Piercing",Yes,No,Epic,2,21000
+ICA19 Red Trinity,Thematic Weapons (Trinity),Pistol,"Silenced, Non-Piercing",Yes,No,Epic,2,18000
+ICA19 White Trinity,Thematic Weapons (Trinity),Pistol,"Silenced, Non-Piercing",Yes,No,Epic,2,16000
+Kronstadt Explosive Pen (Gen 2),Thematic Weapons (Undying),Impact,Explosive,Yes,No,Rare,2,500
+Kronstadt IOI-1998X Surround Earphones,Thematic Weapons (Undying),Melee,"Fiber Wire, Lethal",Yes,No,Epic,1,9000
+Kronstadt Mini Flash Robo XOI-2900,Thematic Weapons (Undying),Remote,Flash,Yes,No,Legendary,2,500
+Beatdown Boombox,Thematic Weapons (Wizard),Tool,Distraction,No,No,Rare,2,5835
+Blunt Knife,Thematic Weapons (Wizard),Melee,"Lethal, Knife",Yes,No,Epic,3,18420
+Tac 'N' Yellow,Thematic Weapons (Wizard),Assault Rifle,"Unsilenced, Non-Piercing",No,No,Legendary,2,22011
+Gold Medal,Thematic Weapons (Champions),Melee,"Fiber Wire, Lethal",Yes,No,Epic,1,10779
+The Trickshot Duck,Thematic Weapons (Champions),Remote,Flash,Yes,No,Rare,2,1986
+Consolation Prize,Thematic Weapons (Champions),Melee,Non-Lethal,Yes,No,Epic,2,12930
+Aircrush 73,Thematic Weapons (Champions),Pistol,"Silenced, Non-Piercing",Yes,No,Legendary,1,15970
+UL-LR Sport Rifle,Thematic Weapons (Champions),Sniper Rifle,"Silenced, Piercing",No,No,Legendary,2,28222
+"""The Smoke""",Thematic Weapons (Herbalist),Pistol,"Silenced, Non-Piercing",Yes,No,Legendary,1,21300
+Ryte LX2 Custom MC,Thematic Weapons (Herbalist),Melee,Non-Lethal,Yes,No,Epic,2,13100
+Morsizzles Cookie,Thematic Weapons (Herbalist),Tool,Distraction,Yes,No,Rare,1,420
+Sunsieger 300,Thematic Weapons (Getaway),Sniper Rifle,"Silenced, Non-Piercing",No,No,Legendary,2,33600
+The Sweetpea Baller,Thematic Weapons (Getaway),Pistol,"Silenced, Non-Piercing",Yes,No,Legendary,1,20300
+Croquet Mallet,Thematic Weapons (Getaway),Melee,Non-Lethal,No,No,Epic,2,19360
+SPF 47,Thematic Weapons (Getaway),Melee,Non-Lethal,Yes,No,Epic,1,1496
+Red Water Balloon,Thematic Weapons (Getaway),Tool,"Trap, Non-Lethal",Yes,No,Rare,1,990
