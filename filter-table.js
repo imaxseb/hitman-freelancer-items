@@ -9,6 +9,7 @@ function filterTable() {
     const selectedPrestiges = Array.from(document.querySelectorAll('.filter-button[data-filter="prestige"].active')).map(btn => btn.getAttribute('data-value'));
     const selectedRarities = Array.from(document.querySelectorAll('.filter-button[data-filter="rarity"].active')).map(btn => btn.getAttribute('data-value'));
     const selectedCapacities = Array.from(document.querySelectorAll('.filter-button[data-filter="capacity"].active')).map(btn => btn.getAttribute('data-value'));
+    const searchTerm = document.getElementById('myInput').value.trim().toLowerCase();
 
     const rows = document.querySelectorAll('#tableBody tr');
     const noResults = document.getElementById('noResults');
@@ -23,6 +24,7 @@ function filterTable() {
         const prestige = cells[5].textContent.trim();
         const rarity = cells[6].textContent.trim();
         const capacity = cells[7].textContent.trim();
+        const values = Array.from(cells).map(cell => cell.textContent.trim().toLowerCase());
 
         const matchesSection = selectedSections.length === 0 || selectedSections.includes(section);
         const matchesType = selectedTypes.length === 0 || selectedTypes.includes(type);
@@ -33,12 +35,19 @@ function filterTable() {
         const matchesPrestige = selectedPrestiges.length === 0 || selectedPrestiges.includes(prestige);
         const matchesRarity = selectedRarities.length === 0 || selectedRarities.includes(rarity);
         const matchesCapacity = selectedCapacities.length === 0 || selectedCapacities.includes(capacity);
+        const matchesSearch = !searchTerm || values[0].includes(searchTerm);
 
-        if (matchesSection && matchesType && matchesSubtype && matchsSilenced && matchPiercing && matchesRarity && matchesConceal && matchesPrestige && matchesCapacity) {
+        if (matchesSearch && matchesSection && matchesType && matchesSubtype && matchsSilenced && matchPiercing && matchesRarity && matchesConceal && matchesPrestige && matchesCapacity) {
             row.classList.remove('hidden');
+            row.style.display = '';
+            const card = document.querySelector(`[data-card-index="${row.dataset.itemIndex}"]`);
+            if (card) card.classList.remove('hidden');
             visibleCount++;
         } else {
             row.classList.add('hidden');
+            row.style.display = 'none';
+            const card = document.querySelector(`[data-card-index="${row.dataset.itemIndex}"]`);
+            if (card) card.classList.add('hidden');
         }
     });
 
